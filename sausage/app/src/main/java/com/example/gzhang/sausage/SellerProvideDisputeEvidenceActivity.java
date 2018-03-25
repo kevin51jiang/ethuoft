@@ -8,15 +8,15 @@ import android.widget.Button;
 import android.widget.EditText;
 
 /**
- * Created by GZhang on 2018-03-24.
+ * Created by GZhang on 2018-03-25.
  */
 
-public class BuyerFileDisputeEvidenceActivity extends Activity {
+public class SellerProvideDisputeEvidenceActivity extends Activity{
 
-    Buyer theBuyer;
+    Seller theSeller;
 
     Button evidenceSubmitButton;
-    EditText buyerEvidenceEditText;
+    EditText sellerEvidenceEditText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,24 +24,25 @@ public class BuyerFileDisputeEvidenceActivity extends Activity {
         setContentView(R.layout.buyer_file_dispute_evidence_layout);
 
         final Intent curIntent = getIntent();
-        theBuyer = curIntent.getParcelableExtra("Buyer");
+        theSeller = curIntent.getParcelableExtra("Seller");
 
-        buyerEvidenceEditText = (EditText) findViewById(R.id.buyerEvidenceEditText);
+        sellerEvidenceEditText = (EditText) findViewById(R.id.buyerEvidenceEditText);
         evidenceSubmitButton = (Button) findViewById(R.id.evidenceSubmitButton);
         evidenceSubmitButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent listDisputesIntent = new Intent(BuyerFileDisputeEvidenceActivity.this, BuyerListOfDisputesActivity.class);
+                Intent listDisputesIntent = new Intent(SellerProvideDisputeEvidenceActivity.this, SellerListOfDisputesActivity.class);
 
                 int itemIndex = curIntent.getIntExtra("itemIndex", 0);
                 Dispute newDispute = new Dispute();
                 newDispute.imageRes = R.drawable.bike;//temporray
-                newDispute.title = theBuyer.boughtItemsArrayList.get(itemIndex).title;
-                newDispute.desc = buyerEvidenceEditText.getText().toString();
-                theBuyer.disputeArrayList.add(newDispute);
+                newDispute.title = theSeller.sellingItemArrayList.get(itemIndex).title;
+                newDispute.desc = sellerEvidenceEditText.getText().toString();
+                theSeller.disputeArrayList.add(newDispute);
 
-                listDisputesIntent.putExtra("Buyer", theBuyer);
-                listDisputesIntent.putExtra("itemIndex", itemIndex);
+                listDisputesIntent.putExtra("Buyer", curIntent.getParcelableExtra("Buyer"));
+                listDisputesIntent.putExtra("Seller", curIntent.getParcelableExtra("Seller"));
+                listDisputesIntent.putExtra("itemIndex", curIntent.getIntExtra("itemIndex", 0));
                 startActivity(listDisputesIntent);
             }
         });
