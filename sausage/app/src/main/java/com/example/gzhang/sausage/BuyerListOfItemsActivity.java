@@ -46,6 +46,7 @@ public class BuyerListOfItemsActivity extends Activity {
                 BoughtItem chosenBuyerItem = (BoughtItem) theBuyer.boughtItemsArrayList.get(position);
                 Intent i = new Intent(BuyerListOfItemsActivity.this, BuyerFileDisputeEvidenceActivity.class);
                 i.putExtra("Buyer", theBuyer);
+                i.putExtra("itemIndex", position);
                 startActivity(i);
             }
         });

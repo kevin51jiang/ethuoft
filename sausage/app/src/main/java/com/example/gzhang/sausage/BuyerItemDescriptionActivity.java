@@ -45,7 +45,7 @@ public class BuyerItemDescriptionActivity extends Activity {
         itemMoreDescTextView.setText(boughtItem.desc);
 
         itemDescCostTextView = (TextView)findViewById(R.id.itemDescCostTextView);
-        itemDescCostTextView.setText(boughtItem.cost + "");
+        itemDescCostTextView.setText(boughtItem.cost + " ETH");
 
         buyButton = (Button)findViewById(R.id.buyButton);
         buyButton.setOnClickListener(new View.OnClickListener() {
