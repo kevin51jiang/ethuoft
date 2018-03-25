@@ -8,6 +8,11 @@ public class Person {
     public String name,
             address;
 
+    public Person(){
+        name = "";
+        address = "";
+    }
+
     public Person(String name, String address){
         this.name = name;
         this.address = address;

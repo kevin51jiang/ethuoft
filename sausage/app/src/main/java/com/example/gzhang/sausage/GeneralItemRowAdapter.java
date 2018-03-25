@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -46,26 +47,28 @@ public class GeneralItemRowAdapter extends ArrayAdapter<BoughtItem>{
         if(boughtItem != null) {
             ImageView boughtItemImageView = (ImageView) v.findViewById(R.id.boughtItemImageView);
             TextView boughtItemTitleTextView = (TextView) v.findViewById(R.id.boughtItemTitleTextView);
-            Button initiateDisputeButton = (Button) v.findViewById(R.id.initiateDisputeButton);
+            ImageView initiateDisputeButton = (ImageView) v.findViewById(R.id.initiateDisputeButton);
 
             if(boughtItemImageView != null){
 
                 //TEMPORARY
-                boughtItemImageView.setImageResource(R.drawable.bike); //cannot hard code forever...
+                boughtItemImageView.setImageResource(boughtItem.imageRes); //cannot hard code forever...
             }
 
             if(boughtItemTitleTextView != null){
-                boughtItemTitleTextView.setText(boughtItem.desc);
+                boughtItemTitleTextView.setText(boughtItem.title);
             }
 
+            /*
             if(initiateDisputeButton != null){
                 initiateDisputeButton.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-
+                        System.out.println("asdasdasd");
                     }
                 });
             }
+            *///assume click on row is a click on button
         }
 
         return v;
