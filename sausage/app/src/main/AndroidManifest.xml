@@ -21,6 +21,11 @@
         <activity android:name=".BuyerTermsOfAgreementActivity"></activity>
         <activity android:name=".BuyerListOfItemsActivity"></activity>
         <activity android:name=".BuyerFileDisputeEvidenceActivity"></activity>
+        <activity android:name=".BuyerListOfDisputesActivity"></activity>
+        <activity android:name=".SellerHomeActivity"></activity>
+        <activity android:name=".SellerProvideDisputeEvidenceActivity"></activity>
+        <activity android:name=".SellerListOfDisputesActivity"></activity>
+        <activity android:name=".VoterDisputesListActivity"></activity>
     </application>
 
 </manifest>

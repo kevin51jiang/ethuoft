@@ -1,24 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <FrameLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    >
+    android:background="@drawable/gradient_background">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:background="@drawable/gradient_background">
-
         <TextView
-            android:id="@+id/textView4"
+            android:id="@+id/textView3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Item List"
+            android:text="List of Disputes"
             android:textAlignment="center"
             android:textSize="18sp"
             android:textStyle="bold" />
@@ -26,7 +22,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:background="@drawable/gradient_background">
 
             <EditText
                 android:id="@+id/editText"
@@ -34,7 +31,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:ems="10"
-                android:hint="Search item here"
+                android:hint="Search dispute here"
                 android:inputType="textPersonName" />
 
             <SearchView
@@ -46,11 +43,19 @@
         </LinearLayout>
 
         <ListView
-            android:id="@+id/buyerListView"
+            android:id="@+id/buyerDisputeListView"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
 
     </LinearLayout>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/disputeFAB"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|bottom"
+        android:layout_margin="16dp"
+        android:src="@drawable/home" />
 
 
 </FrameLayout>

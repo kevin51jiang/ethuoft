@@ -1,32 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/gradient_background"
     android:orientation="vertical">
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="32dp"
         android:text="Submit evidence/argument"
+        android:textAlignment="center"
         android:textSize="18sp"
         android:textStyle="bold" />
 
     <EditText
-        android:id="@+id/editText3"
+        android:id="@+id/buyerEvidenceEditText"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
+        android:layout_height="200dp"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/textView"
+        android:layout_marginTop="54dp"
         android:hint="write argument here"
-        android:inputType="textPersonName" />
+        android:inputType="text" />
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/floatingActionButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="29dp"
+        android:layout_marginEnd="23dp"
         android:clickable="true"
-        app:srcCompat="@android:drawable/ic_menu_add" />
+        app:srcCompat="@android:drawable/ic_input_add" />
 
-</LinearLayout>
+    <Button
+        android:id="@+id/evidenceSubmitButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/floatingActionButton"
+        android:layout_below="@+id/buyerEvidenceEditText"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="34dp"
+        android:text="submit" />
+
+</RelativeLayout>

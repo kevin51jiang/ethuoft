@@ -18,7 +18,7 @@
             android:id="@+id/textView4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Item List"
+            android:text="Your Market"
             android:textAlignment="center"
             android:textSize="18sp"
             android:textStyle="bold" />
@@ -46,7 +46,7 @@
         </LinearLayout>
 
         <ListView
-            android:id="@+id/buyerListView"
+            android:id="@+id/sellerListView"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
 

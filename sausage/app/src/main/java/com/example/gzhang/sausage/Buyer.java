@@ -12,9 +12,11 @@ import java.util.ArrayList;
 public class Buyer extends Person implements Parcelable {
 
     ArrayList<BoughtItem> boughtItemsArrayList;
+    ArrayList<Dispute> disputeArrayList;
 
     public Buyer(){
         boughtItemsArrayList = new ArrayList<BoughtItem>();
+        disputeArrayList = new ArrayList<Dispute>();
     }
 
     public Buyer(String name, String address) {
@@ -23,6 +25,7 @@ public class Buyer extends Person implements Parcelable {
 
     protected Buyer(Parcel in) {
         boughtItemsArrayList = in.createTypedArrayList(BoughtItem.CREATOR);
+        disputeArrayList = in.createTypedArrayList(Dispute.CREATOR);
     }
 
     public static final Creator<Buyer> CREATOR = new Creator<Buyer>() {
@@ -58,5 +61,6 @@ public class Buyer extends Person implements Parcelable {
     @Override
     public void writeToParcel(Parcel parcel, int i) {
         parcel.writeTypedList(boughtItemsArrayList);
+        parcel.writeTypedList(disputeArrayList);
     }
 }

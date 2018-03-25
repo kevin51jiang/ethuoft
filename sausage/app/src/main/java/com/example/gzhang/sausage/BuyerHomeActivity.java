@@ -3,6 +3,8 @@ package com.example.gzhang.sausage;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -47,5 +49,6 @@ public class BuyerHomeActivity extends Activity{
                 startActivity(i);
             }
         });
+
     }
 }
