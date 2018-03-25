@@ -2,6 +2,9 @@ package com.example.gzhang.sausage;
 
 import android.os.Parcel;
 import android.os.Parcelable;
+import com.example.gzhang.sausage.Voting;
+
+import org.web3j.protocol.Web3jFactory;
 
 import java.util.ArrayList;
 
@@ -19,9 +22,6 @@ public class Buyer extends Person implements Parcelable {
         disputeArrayList = new ArrayList<Dispute>();
     }
 
-    public Buyer(String name, String address) {
-        super(name, address);
-    }
 
     protected Buyer(Parcel in) {
         boughtItemsArrayList = in.createTypedArrayList(BoughtItem.CREATOR);
@@ -45,7 +45,8 @@ public class Buyer extends Person implements Parcelable {
     }
 
     public void initTransfer(Seller sell){
-
+        Web3j web3 = Web3jFactory(new HttpService("https://morden.infura.io/your-token"));
+        Voting contract  = Voting.deploy();
     }
 
     public void startForum(){

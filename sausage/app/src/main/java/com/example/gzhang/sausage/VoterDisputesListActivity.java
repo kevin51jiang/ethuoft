@@ -35,12 +35,14 @@ public class VoterDisputesListActivity extends Activity{
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
 
                 //to file dispute page
-                BoughtItem chosenBuyerItem = (BoughtItem) theSeller.boughtItemsArrayList.get(position);
+
+                BoughtItem chosenBuyerItem = (BoughtItem) theSeller.sellingItemArrayList.get(position);
                 Intent i = new Intent(VoterDisputesListActivity.this, BuyerFileDisputeEvidenceActivity.class);
                 i.putExtra("Buyer", theBuyer);
                 i.putExtra("Seller", theSeller);
                 i.putExtra("itemIndex", position);
                 startActivity(i);
+
             }
         });
     }

@@ -5,10 +5,11 @@ package com.example.gzhang.sausage;
  */
 
 public class Voter extends Person {
+    public String toVoteFor;
 
-
-    public Voter(String name, String address) {
-        super(name, address);
+    public Voter(String name, String toVoteFor, String pubKey, String privKey) {
+        super(name, pubKey, privKey);
+        this.toVoteFor = toVoteFor;
     }
 
     public Voter() {
