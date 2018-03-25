@@ -17,6 +17,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".BuyerHomeActivity"></activity>
+        <activity android:name=".BuyerItemDescriptionActivity"></activity>
+        <activity android:name=".BuyerTermsOfAgreementActivity"></activity>
     </application>
 
 </manifest>
