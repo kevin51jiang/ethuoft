@@ -11,6 +11,10 @@ public class Voter extends Person {
         super(name, address);
     }
 
+    public Voter() {
+
+    }
+
     public void vote(Seller sell, Buyer buy){
 
     }

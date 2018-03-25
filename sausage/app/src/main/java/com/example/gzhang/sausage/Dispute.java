@@ -12,17 +12,23 @@ public class Dispute implements Parcelable{
     String title; //refers to same title as item
     String desc; //new desc; refers to argument...
     //store other tings...
+    double voterAmount;
+    double bounty;
 
     public Dispute(){
         imageRes = R.drawable.bike;
         title = "";
         desc = "";
+        voterAmount = 0;
+        bounty = 0;
     }
 
-    public Dispute(int imageRes, String title, String desc){
+    public Dispute(int imageRes, String title, String desc, double voterAmount, double bounty){
         this.imageRes = imageRes;
         this.title = title;
         this.desc = desc;
+        this.voterAmount = voterAmount;
+        this.bounty = bounty;
     }
 
 
@@ -30,6 +36,8 @@ public class Dispute implements Parcelable{
         imageRes = in.readInt();
         title = in.readString();
         desc = in.readString();
+        voterAmount = in.readDouble();
+        bounty = in.readDouble();
     }
 
     public static final Creator<Dispute> CREATOR = new Creator<Dispute>() {
@@ -54,5 +62,7 @@ public class Dispute implements Parcelable{
         parcel.writeInt(imageRes);
         parcel.writeString(title);
         parcel.writeString(desc);
+        parcel.writeDouble(voterAmount);
+        parcel.writeDouble(bounty);
     }
 }
