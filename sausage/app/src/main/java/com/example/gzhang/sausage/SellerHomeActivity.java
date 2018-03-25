@@ -34,9 +34,10 @@ public class SellerHomeActivity extends Activity {
 
         ArrayList<BoughtItem> sellingItemArrayList = new ArrayList<BoughtItem>();
         BoughtItem dummy = new BoughtItem(R.drawable.home, "Beautiful home", "home is as large as the eye can see...", 400.2, 70);
-        sellingItemArrayList.add(dummy);
-        sellingItemArrayList.add(dummy);
+        BoughtItem dummy2 = new BoughtItem(R.drawable.gokart, "Sausage", "the only sausage that'll fit your buns (*cringe)", 120, 20);
         sellingItemArrayList.add(theBuyer.boughtItemsArrayList.get(itemIndex));
+        sellingItemArrayList.add(dummy2);
+        sellingItemArrayList.add(dummy);
 
         theSeller.sellingItemArrayList = sellingItemArrayList;
 
