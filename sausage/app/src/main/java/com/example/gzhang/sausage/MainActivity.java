@@ -69,6 +69,11 @@ public class MainActivity extends AppCompatActivity {
                 items.add(boughtItem);
                 newBuyer.boughtItemsArrayList = items;
 
+                ArrayList<Dispute> disputes = new ArrayList<Dispute>();
+                Dispute dispute = new Dispute(R.drawable.bike, "Bike", "you all being lied to. its a lieeeeeeeeeeeeeeeeee", 2.5, 10);
+                disputes.add(dispute);
+                newBuyer.disputeArrayList = disputes;
+
                 if(theBuyer != null) {
                     i.putExtra("Buyer", theBuyer);
                     i.putExtra("itemIndex", itemIndex);

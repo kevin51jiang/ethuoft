@@ -44,12 +44,13 @@ class BuyerRowAdapter extends ArrayAdapter<BuyerItem>{
 
         if(buyerItem != null) {
             ImageView itemImageView = (ImageView) v.findViewById(R.id.itemImageView);
+            itemImageView.setMaxHeight(50);
             TextView descTextView = (TextView) v.findViewById(R.id.itemTextView);
 
             if(itemImageView != null){
 
                 //TEMPORARY
-                itemImageView.setImageResource(R.drawable.bike);
+                itemImageView.setImageResource(buyerItem.imageRes);
             }
 
             if(descTextView != null){

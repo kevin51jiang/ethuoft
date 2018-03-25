@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -28,12 +27,12 @@ public class BuyerHomeActivity extends Activity{
 
         final ArrayList<BuyerItem> buyerItemsList = new ArrayList<BuyerItem>();
 
-        BuyerItem dummy = new BuyerItem(R.drawable.bike, "This is a dummy item");
+        BuyerItem dummy = new BuyerItem(R.drawable.gokart, "This is a dummy item");
+        BuyerItem dummy2 = new BuyerItem(R.drawable.banana, "the only sausage that'll fit your buns (*cringe)");
         BuyerItem bike = new BuyerItem(R.drawable.bike, "This is a bike desc");
-        buyerItemsList.add(dummy);
-        buyerItemsList.add(dummy);
-        buyerItemsList.add(dummy);
         buyerItemsList.add(bike);
+        buyerItemsList.add(dummy);
+        buyerItemsList.add(dummy2);
 
         BuyerRowAdapter buyerRowAdapter = new BuyerRowAdapter(this, R.layout.buyer_row_layout, buyerItemsList);
         buyerListView.setAdapter(buyerRowAdapter);
@@ -46,6 +45,15 @@ public class BuyerHomeActivity extends Activity{
                 BuyerItem chosenBuyerItem = (BuyerItem) buyerItemsList.get(position);
                 Intent i = new Intent(BuyerHomeActivity.this, BuyerItemDescriptionActivity.class);
                 i.putExtra("BuyerItem", chosenBuyerItem);
+                startActivity(i);
+            }
+        });
+
+        FloatingActionButton fab = findViewById(R.id.disputeFAB);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(BuyerHomeActivity.this, Accept.class);
                 startActivity(i);
             }
         });

@@ -26,13 +26,13 @@ public class BuyerListOfItemsActivity extends Activity {
         Intent curIntent = getIntent();
         BoughtItem boughtItem = curIntent.getParcelableExtra("BoughtItem");
 
-        BoughtItem dummy = new BoughtItem(R.drawable.bike, "Dummy bike", "Dummy desc", 150.2, 20);
+        BoughtItem dummy2 = new BoughtItem(R.drawable.gokart, "Goosey Duck", "Fun to play with. pink.", 120000.2, 90);
+        BoughtItem dummy3 = new BoughtItem(R.drawable.home, "Beautiful home", "home is as large as the eye can see...", 400.2, 70);
 
         theBuyer = new Buyer();
-        theBuyer.boughtItemsArrayList.add(dummy);
         theBuyer.boughtItemsArrayList.add(boughtItem);
-        theBuyer.boughtItemsArrayList.add(dummy);
-        theBuyer.boughtItemsArrayList.add(dummy);
+        theBuyer.boughtItemsArrayList.add(dummy3);
+        theBuyer.boughtItemsArrayList.add(dummy2);
 
         buyersListOfItemsListView = (ListView) findViewById(R.id.boughtItemsListView);
 

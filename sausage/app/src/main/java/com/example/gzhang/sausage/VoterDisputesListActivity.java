@@ -3,6 +3,7 @@ package com.example.gzhang.sausage;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -15,6 +16,8 @@ public class VoterDisputesListActivity extends Activity{
 
 
     ListView voterDisputeListView;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,11 +38,24 @@ public class VoterDisputesListActivity extends Activity{
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
 
                 //to file dispute page
-                BoughtItem chosenBuyerItem = (BoughtItem) theSeller.boughtItemsArrayList.get(position);
-                Intent i = new Intent(VoterDisputesListActivity.this, BuyerFileDisputeEvidenceActivity.class);
+                //Dispute chosenDispute = (Dispute) theSeller.disputeArrayList.get(position);
+                Intent i = new Intent(VoterDisputesListActivity.this, DisputeBuyerAndSellerActivity.class);
                 i.putExtra("Buyer", theBuyer);
                 i.putExtra("Seller", theSeller);
                 i.putExtra("itemIndex", position);
+                startActivity(i);
+            }
+        });
+
+
+        FloatingActionButton fab = findViewById(R.id.disputeFAB3);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(VoterDisputesListActivity.this, MainActivity.class);
+                i.putExtra("Buyer", theBuyer);
+                i.putExtra("Seller", theSeller);
+                i.putExtra("itemIndex", itemIndex);
                 startActivity(i);
             }
         });
