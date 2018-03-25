@@ -20,6 +20,7 @@
         <activity android:name=".BuyerItemDescriptionActivity"></activity>
         <activity android:name=".BuyerTermsOfAgreementActivity"></activity>
         <activity android:name=".BuyerListOfItemsActivity"></activity>
+        <activity android:name=".BuyerFileDisputeEvidenceActivity"></activity>
     </application>
 
 </manifest>
