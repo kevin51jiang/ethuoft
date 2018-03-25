@@ -24,10 +24,10 @@ public class BuyerHomeActivity extends Activity{
 
         buyerListView = (ListView)findViewById(R.id.buyerListView);
 
-        ArrayList<BuyerItem> buyerItemsList = new ArrayList<BuyerItem>();
+        final ArrayList<BuyerItem> buyerItemsList = new ArrayList<BuyerItem>();
 
-        BuyerItem dummy = new BuyerItem(-1, "This is a dummy item");
-        BuyerItem bike = new BuyerItem(-1, "This is a bike desc");
+        BuyerItem dummy = new BuyerItem(R.drawable.bike, "This is a dummy item");
+        BuyerItem bike = new BuyerItem(R.drawable.bike, "This is a bike desc");
         buyerItemsList.add(dummy);
         buyerItemsList.add(dummy);
         buyerItemsList.add(dummy);
@@ -41,7 +41,9 @@ public class BuyerHomeActivity extends Activity{
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
 
                 //to description screen
+                BuyerItem chosenBuyerItem = (BuyerItem) buyerItemsList.get(position);
                 Intent i = new Intent(BuyerHomeActivity.this, BuyerItemDescriptionActivity.class);
+                i.putExtra("BuyerItem", chosenBuyerItem);
                 startActivity(i);
             }
         });
