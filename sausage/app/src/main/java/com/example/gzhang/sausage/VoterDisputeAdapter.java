@@ -57,8 +57,8 @@ class VoterDisputeAdapter extends ArrayAdapter<Dispute> {
             }
 
             if(ethAmountTextView != null){
-                //TEMPORARY
-                ethAmountTextView.setText(0 + " ETH");
+                System.out.println(dispute.bounty);
+                ethAmountTextView.setText( .2 + " ETH");
             }
         }
 

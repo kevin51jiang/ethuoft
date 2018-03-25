@@ -26,6 +26,9 @@
         <activity android:name=".SellerProvideDisputeEvidenceActivity"></activity>
         <activity android:name=".SellerListOfDisputesActivity"></activity>
         <activity android:name=".VoterDisputesListActivity"></activity>
+        <activity android:name=".DisputeBuyerAndSellerActivity"></activity>
+        <activity android:name=".Solution"></activity>
+        <activity android:name=".Accept"></activity>
     </application>
 
 </manifest>
