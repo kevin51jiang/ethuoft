@@ -41,6 +41,7 @@ public class BuyerFileDisputeEvidenceActivity extends Activity {
                 theBuyer.disputeArrayList.add(newDispute);
 
                 listDisputesIntent.putExtra("Buyer", theBuyer);
+                listDisputesIntent.putExtra("itemIndex", theBuyer);
                 startActivity(listDisputesIntent);
             }
         });
